@@ -68,7 +68,7 @@ function Product2({ product, addToCart, loadCurrentItem }) {
     )
 }
 
-// Update on store
+// Update state in store
 const mapDispatchToProps = (dispatch) => {
   return{
     loadCurrentItem: (item) => dispatch({type: actionTypes.LOAD_CURRENT_ITEM, payload: {item: item}}),

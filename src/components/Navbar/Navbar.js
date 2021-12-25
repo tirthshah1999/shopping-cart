@@ -26,7 +26,7 @@ function Navbar2({cart=[]}) {
     useEffect(() => {
       let count = 0;
       cart.forEach((item) => {
-        count += item.qty;
+        count += Number(item.qty);
       });
   
       setCartCount(count);
@@ -51,4 +51,10 @@ function Navbar2({cart=[]}) {
     )
 }
 
-export default Navbar2;
+const mapStateToProps = (state) => {
+  return{
+    cart: state.cart
+  }
+}
+
+export default connect(mapStateToProps)(Navbar2);
